@@ -13,8 +13,9 @@ export class MezzuriteObject {
     childElementNames: object;
     slowestResource: object;
     currentComponents: object;
-    vltComponentLookup: object;
-    elementLookup: object;
+    vltComponentLookup: object; // bool lookup table indicating if component itersects viewport
+    elementLookup: object; // DOM elements mapped to component
+    componentMountLookup: object; // lookup for component mount status
 
     constructor() {
         this.firstViewLoaded = false;
@@ -27,5 +28,6 @@ export class MezzuriteObject {
         this.currentComponents = {};
         this.vltComponentLookup = {};
         this.elementLookup = {};
+        this.componentMountLookup = {};
     }
 }

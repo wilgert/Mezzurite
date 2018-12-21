@@ -3,7 +3,7 @@
   "homepage": "https://create-react-app-redux.now.sh",
   "scripts": {
     "deploy": "now && now alias",
-    "start": "react-scripts start",
+    "start": "node build.js && react-scripts start",
     "now-start": "serve -s ./build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@microsoft/mezzurite-react": "^1.0.4",
+    "chalk": "^2.4.1",
     "connected-react-router": "4.3.0",
     "intersection-observer": "^0.5.0",
     "react": "16.4.2",
@@ -25,8 +26,10 @@
     "react-router-dom": "4.3.1",
     "redux": "4.0.0",
     "redux-thunk": "2.3.0",
+    "rxjs": "^6.3.3",
     "sanitize.css": "6.0.0",
-    "serve": "9.4.0"
+    "serve": "9.4.0",
+    "shelljs": "^0.8.3"
   },
   "browserslist": [
     ">0.2%",

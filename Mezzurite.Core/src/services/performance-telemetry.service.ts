@@ -5,6 +5,8 @@ import { MezzuriteConstants } from '../utils/performance-constants';
 import { PerformanceTimingService } from './performance-timing.service';
 import { MezzuriteUtils } from './performance-utils.service';
 
+declare var PerformanceObserver: any;
+
 /**
  * Class containing core telemetry functions
  */
@@ -19,8 +21,34 @@ export class PerformanceTelemetryService {
             (<any>window).mezzurite.captureTimer = setTimeout(function() {
                 PerformanceTelemetryService.captureTimings();
             }, MezzuriteConstants.captureCycleTimeout);
+            // if (PerformanceObserver !== undefined) {
+            //     var observer = new PerformanceObserver((list: any) => {
+            //         list.getEntries().forEach((entry: any) => {
+            //             // Display each reported measurement on console
+            //             if (console) {
+            //               console.log("Name: "       + entry.name      +
+            //                           ", Type: "     + entry.entryType +
+            //                           ", Start: "    + entry.startTime +
+            //                           ", Duration: " + entry.duration  + "\n");
+            //             }
+            //           })
+            //     })
+            //     observer.observe({entryTypes: ['resource']});
+            // } else {
+            //     // handle IE and Edge
+            // }
         }
     }
+
+    // static pollComponents(){
+    //     let interval = setInterval(function(){
+    //         // no components
+    //         if ((<any>window).mezzurite.componentMountLookup === {}){
+    //             clearInterval(interval);
+    //         }
+    //         else if ((<any>window).mezzurite.componentMountLookup.filter((component: any) => component))
+    //     },1000)
+    // }
 
     /**
      * Captures timings for the given period

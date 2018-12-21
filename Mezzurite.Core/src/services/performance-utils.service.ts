@@ -16,6 +16,7 @@ export class MezzuriteUtils {
      */
     static createMezzuriteObject(obj: any): void {
         this.addCustomEventPolyfill();
+
         const mzObj = new MezzuriteObject();
         for (const prop in mzObj) {
             if (obj[prop] === undefined) {
@@ -34,6 +35,7 @@ export class MezzuriteUtils {
         obj.currentComponents = {};
         obj.vltComponentLookup = {};
         obj.elementLookup = {};
+        obj.componentMountLookup = {};
         (<any>window).mezzurite = obj;
     }
 

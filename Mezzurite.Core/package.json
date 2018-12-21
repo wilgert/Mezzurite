@@ -27,7 +27,9 @@
   "dependencies": {
     "@types/angular": "^1.6.51",
     "@types/jquery": "^2.0.46",
-    "reflect-metadata": "^0.1.8"
+    "fetch-intercept": "^2.3.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "^6.3.3"
   },
   "devDependencies": {
     "@angular/compiler": "^6.1.9",

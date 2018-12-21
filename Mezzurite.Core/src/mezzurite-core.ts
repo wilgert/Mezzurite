@@ -6,3 +6,4 @@ export * from './services/performance-timing.service';
 export * from './utils/performance-metric';
 export * from './utils/performance-constants';
 export * from './services/performance-utils.service';
+export * from './services/fetch-interceptor.service';
